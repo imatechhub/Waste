@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - EcoWaste Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .notification-item {
+            display: flex;
+            gap: 15px;
+            padding: 18px 20px;
+            border-bottom: 1px solid var(--gray-light);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .notification-item:hover { background: var(--light); }
+        .notification-item.unread { background: rgba(0,184,148,0.05); border-left: 3px solid var(--primary); }
+        .notification-icon { font-size: 1.3rem; margin-top: 3px; }
+        .notification-content h4 { font-size: 0.95rem; margin-bottom: 4px; }
+        .notification-content p { font-size: 0.85rem; color: var(--dark-light); }
+        .notification-time { font-size: 0.75rem; color: var(--gray); }
+    </style>
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo"><i class="fas fa-recycle"></i><span>EcoWaste <strong>Pro</strong></span></div>
+                <button class="sidebar-close"><i class="fas fa-times"></i></button>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="menu-category">Main</div>
+                <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="schedule-pickup.html"><i class="fas fa-truck-pickup"></i> Schedule Pickup</a>
+                <a href="track-pickup.html"><i class="fas fa-map-marked-alt"></i> Track Pickup</a>
+                <div class="menu-category">Waste</div>
+                <a href="waste-categories.html"><i class="fas fa-tags"></i> Waste Categories</a>
+                <a href="recycling-center.html"><i class="fas fa-recycle"></i> Recycling Centers</a>
+                <a href="eco-rewards.html"><i class="fas fa-trophy"></i> Eco Rewards</a>
+                <div class="menu-category">Account</div>
+                <a href="payment.html"><i class="fas fa-credit-card"></i> Payments</a>
+                <a href="complaints.html"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+                <a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+                <a href="notifications.html" class="active"><i class="fas fa-bell"></i> Notifications</a>
+                <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                <div class="menu-category">Other</div>
+                <a href="../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="top-bar">
+                <div class="top-bar-left">
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                </div>
+                <div class="top-bar-right">
+                    <button class="btn btn-sm btn-outline" onclick="markAllRead()">Mark All Read</button>
+                    <div class="user-menu"><div class="user-avatar">JD</div></div>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1>🔔 Notifications</h1>
+                        <div class="breadcrumb">
+                            <a href="dashboard.html">Dashboard</a>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Notifications</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div id="notificationList">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <a href="https://wa.me/2347030151024" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <script src="app.js"></script>
+    <script>
+        function markAllRead() {
+            const notifications = JSON.parse(localStorage.getItem('notifications') || '[]');
+            notifications.forEach(n => n.read = true);
+            localStorage.setItem('notifications', JSON.stringify(notifications));
+            loadNotifications();
+            updateNotificationBadge();
+            showToast('All notifications marked as read', 'success');
+        }
+    </script>
+</body>
+</html>

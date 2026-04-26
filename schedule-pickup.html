@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Pickup - EcoWaste Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-recycle"></i>
+                    <span>EcoWaste <strong>Pro</strong></span>
+                </div>
+                <button class="sidebar-close"><i class="fas fa-times"></i></button>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="menu-category">Main</div>
+                <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="schedule-pickup.html" class="active"><i class="fas fa-truck-pickup"></i> Schedule Pickup</a>
+                <a href="track-pickup.html"><i class="fas fa-map-marked-alt"></i> Track Pickup</a>
+                <div class="menu-category">Waste</div>
+                <a href="waste-categories.html"><i class="fas fa-tags"></i> Waste Categories</a>
+                <a href="recycling-center.html"><i class="fas fa-recycle"></i> Recycling Centers</a>
+                <a href="eco-rewards.html"><i class="fas fa-trophy"></i> Eco Rewards</a>
+                <div class="menu-category">Account</div>
+                <a href="payment.html"><i class="fas fa-credit-card"></i> Payments</a>
+                <a href="complaints.html"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+                <a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+                <a href="notifications.html"><i class="fas fa-bell"></i> Notifications</a>
+                <a href="community.html"><i class="fas fa-users"></i> Community</a>
+                <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                <div class="menu-category">Other</div>
+                <a href="admin.html"><i class="fas fa-cog"></i> Admin Panel</a>
+                <a href="../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="top-bar">
+                <div class="top-bar-left">
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="notifications.html" class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </a>
+                    <div class="user-menu">
+                        <div class="user-avatar">JD</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1>🚛 Schedule Pickup</h1>
+                        <div class="breadcrumb">
+                            <a href="dashboard.html">Dashboard</a>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Schedule Pickup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <!-- Pickup Form -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-calendar-plus"></i> Pickup Details</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="pickupForm">
+                                <div class="form-group">
+                                    <label><i class="fas fa-user"></i> Full Name</label>
+                                    <input type="text" name="fullName" required placeholder="Enter your full name">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-phone"></i> Phone Number</label>
+                                    <input type="tel" name="phone" required placeholder="e.g., +234...">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-envelope"></i> Email</label>
+                                    <input type="email" name="email" required placeholder="your@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-map-marker-alt"></i> Pickup Address</label>
+                                    <input type="text" name="address" required placeholder="Enter full address">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label><i class="fas fa-city"></i> City</label>
+                                        <select name="city" required>
+                                            <option value="">Select City</option>
+                                            <option value="Lagos">Lagos</option>
+                                            <option value="Abuja">Abuja</option>
+                                            <option value="Port Harcourt">Port Harcourt</option>
+                                            <option value="Kano">Kano</option>
+                                            <option value="Ibadan">Ibadan</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label><i class="fas fa-map-pin"></i> Landmark</label>
+                                        <input type="text" name="landmark" placeholder="Nearest landmark">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label><i class="fas fa-calendar"></i> Pickup Date</label>
+                                        <input type="date" name="pickupDate" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label><i class="fas fa-clock"></i> Preferred Time</label>
+                                        <select name="pickupTime" required>
+                                            <option value="">Select Time</option>
+                                            <option value="7:00 AM - 9:00 AM">7:00 AM - 9:00 AM</option>
+                                            <option value="9:00 AM - 11:00 AM">9:00 AM - 11:00 AM</option>
+                                            <option value="11:00 AM - 1:00 PM">11:00 AM - 1:00 PM</option>
+                                            <option value="1:00 PM - 3:00 PM">1:00 PM - 3:00 PM</option>
+                                            <option value="3:00 PM - 5:00 PM">3:00 PM - 5:00 PM</option>
+                                            <option value="5:00 PM - 7:00 PM">5:00 PM - 7:00 PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-trash"></i> Waste Type</label>
+                                    <select name="wasteType" required>
+                                        <option value="">Select Waste Type</option>
+                                        <option value="Household Waste">🏠 Household Waste</option>
+                                        <option value="Organic/Food Waste">🥬 Organic / Food Waste</option>
+                                        <option value="Plastic & Recyclables">♻️ Plastic & Recyclables</option>
+                                        <option value="Electronic Waste">💻 Electronic Waste (E-waste)</option>
+                                        <option value="Construction Debris">🏗️ Construction Debris</option>
+                                        <option value="Garden/Yard Waste">🌿 Garden / Yard Waste</option>
+                                        <option value="Medical Waste">🏥 Medical Waste</option>
+                                        <option value="Hazardous Waste">☢️ Hazardous Waste</option>
+                                        <option value="Bulky Items">🛋️ Bulky Items (Furniture)</option>
+                                        <option value="Mixed Waste">🗑️ Mixed Waste</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-weight-hanging"></i> Estimated Weight</label>
+                                    <select name="estimatedWeight" required>
+                                        <option value="">Select Weight Range</option>
+                                        <option value="Less than 5kg">Less than 5 kg</option>
+                                        <option value="5-15 kg">5 - 15 kg</option>
+                                        <option value="15-50 kg">15 - 50 kg</option>
+                                        <option value="50-100 kg">50 - 100 kg</option>
+                                        <option value="More than 100 kg">More than 100 kg</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-boxes"></i> Number of Bags/Bins</label>
+                                    <input type="number" name="numberOfBags" min="1" max="50" required placeholder="How many bags/bins?">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-comment"></i> Special Instructions</label>
+                                    <textarea name="specialInstructions" rows="3" placeholder="Any special instructions for the pickup team..."></textarea>
+                                </div>
+                                <div class="form-group checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="recurring" value="Yes">
+                                        <span>Make this a recurring pickup (weekly)</span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block btn-lg">
+                                    <i class="fas fa-truck"></i> Schedule Pickup
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Info -->
+                    <div>
+                        <!-- Pricing Info -->
+                        <div class="card mb-20">
+                            <div class="card-header">
+                                <h3><i class="fas fa-calculator"></i> Pricing Guide</h3>
+                            </div>
+                            <div class="card-body">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Waste Type</th>
+                                            <th>Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Household Waste</td><td>₦1,500</td></tr>
+                                        <tr><td>Recyclables</td><td>₦1,000</td></tr>
+                                        <tr><td>Organic Waste</td><td>₦1,200</td></tr>
+                                        <tr><td>E-Waste</td><td>₦2,500</td></tr>
+                                        <tr><td>Bulky Items</td><td>₦3,500</td></tr>
+                                        <tr><td>Hazardous Waste</td><td>₦5,000</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Guidelines -->
+                        <div class="card mb-20">
+                            <div class="card-header">
+                                <h3><i class="fas fa-info-circle"></i> Pickup Guidelines</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul style="list-style: disc; padding-left: 20px; color: var(--dark-light); font-size: 0.9rem;">
+                                    <li style="padding: 5px 0;">Ensure waste is properly bagged and sealed</li>
+                                    <li style="padding: 5px 0;">Place bags near your gate/entrance</li>
+                                    <li style="padding: 5px 0;">Separate recyclables from general waste</li>
+                                    <li style="padding: 5px 0;">Label hazardous waste clearly</li>
+                                    <li style="padding: 5px 0;">Be available during the pickup window</li>
+                                    <li style="padding: 5px 0;">Maximum 50 bags per single pickup</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Recent Pickups -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-history"></i> Your Recent Pickups</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="sideRecentPickups">
+                                            <tr><td colspan="2" class="text-center text-muted">No pickups</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <a href="https://wa.me/2347030151024" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pickups = JSON.parse(localStorage.getItem('pickups') || '[]');
+            const tbody = document.getElementById('sideRecentPickups');
+            if (pickups.length > 0) {
+                tbody.innerHTML = pickups.slice(-5).reverse().map(p => `
+                    <tr>
+                        <td>${p.trackingId}</td>
+                        <td><span class="status status-pending">${p.status}</span></td>
+                    </tr>
+                `).join('');
+            }
+        });
+    </script>
+</body>
+</html>

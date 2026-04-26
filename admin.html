@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - EcoWaste Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo"><i class="fas fa-recycle"></i><span>EcoWaste <strong>Pro</strong></span></div>
+                <button class="sidebar-close"><i class="fas fa-times"></i></button>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="menu-category">Main</div>
+                <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="schedule-pickup.html"><i class="fas fa-truck-pickup"></i> Schedule Pickup</a>
+                <a href="track-pickup.html"><i class="fas fa-map-marked-alt"></i> Track Pickup</a>
+                <div class="menu-category">Waste</div>
+                <a href="waste-categories.html"><i class="fas fa-tags"></i> Waste Categories</a>
+                <a href="recycling-center.html"><i class="fas fa-recycle"></i> Recycling Centers</a>
+                <a href="eco-rewards.html"><i class="fas fa-trophy"></i> Eco Rewards</a>
+                <div class="menu-category">Account</div>
+                <a href="payment.html"><i class="fas fa-credit-card"></i> Payments</a>
+                <a href="complaints.html"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+                <a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+                <a href="notifications.html"><i class="fas fa-bell"></i> Notifications</a>
+                <a href="community.html"><i class="fas fa-users"></i> Community</a>
+                <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                <div class="menu-category">Admin</div>
+                <a href="admin.html" class="active"><i class="fas fa-cog"></i> Admin Panel</a>
+                <a href="../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="top-bar">
+                <div class="top-bar-left">
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                    <div class="search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Search..."></div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="notifications.html" class="notification-bell"><i class="fas fa-bell"></i><span class="badge">3</span></a>
+                    <div class="user-menu">
+                        <div class="user-avatar" style="background: var(--gradient-accent);">AD</div>
+                        <div><strong>Admin</strong></div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1>⚙️ Admin Panel</h1>
+                        <div class="breadcrumb">
+                            <a href="dashboard.html">Dashboard</a>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Admin Panel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Stats -->
+                <div class="dashboard-stats mb-30">
+                    <div class="dash-stat-card">
+                        <div class="dash-stat-icon" style="background: var(--gradient-primary);"><i class="fas fa-users"></i></div>
+                        <div class="dash-stat-info">
+                            <h3>1</h3>
+                            <p>Registered Users</p>
+                        </div>
+                    </div>
+                    <div class="dash-stat-card">
+                        <div class="dash-stat-icon" style="background: var(--gradient-secondary);"><i class="fas fa-truck"></i></div>
+                        <div class="dash-stat-info">
+                            <h3 id="adminPickups">0</h3>
+                            <p>Total Pickups</p>
+                        </div>
+                    </div>
+                    <div class="dash-stat-card">
+                        <div class="dash-stat-icon" style="background: var(--gradient-accent);"><i class="fas fa-exclamation-circle"></i></div>
+                        <div class="dash-stat-info">
+                            <h3 id="adminComplaints">0</h3>
+                            <p>Open Complaints</p>
+                        </div>
+                    </div>
+                    <div class="dash-stat-card">
+                        <div class="dash-stat-icon" style="background: linear-gradient(135deg, #fdcb6e, #f39c12);"><i class="fas fa-naira-sign"></i></div>
+                        <div class="dash-stat-info">
+                            <h3 id="adminRevenue">₦0</h3>
+                            <p>Total Revenue</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Actions -->
+                <div class="card mb-30">
+                    <div class="card-header">
+                        <h3><i class="fas fa-tools"></i> Admin Actions</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="grid-3" style="gap: 15px;">
+                            <button class="btn btn-primary btn-block" onclick="exportData()">
+                                <i class="fas fa-download"></i> Export All Data
+                            </button>
+                            <button class="btn btn-secondary btn-block" onclick="generateReport()">
+                                <i class="fas fa-file-pdf"></i> Generate Report
+                            </button>
+                            <button class="btn btn-outline btn-block" onclick="sendBroadcast()">
+                                <i class="fas fa-bullhorn"></i> Send Broadcast
+                            </button>
+                            <button class="btn btn-outline btn-block" onclick="viewAllPickups()">
+                                <i class="fas fa-list"></i> View All Pickups
+                            </button>
+                            <button class="btn btn-outline btn-block" onclick="viewAllComplaints()">
+                                <i class="fas fa-inbox"></i> View All Complaints
+                            </button>
+                            <button class="btn btn-danger btn-block" onclick="clearAllData()">
+                                <i class="fas fa-trash"></i> Clear All Data
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- All Pickups -->
+                <div class="card mb-30">
+                    <div class="card-header">
+                        <h3><i class="fas fa-truck"></i> All Pickup Requests</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Tracking ID</th>
+                                        <th>Customer</th>
+                                        <th>Waste Type</th>
+                                        <th>Date</th>
+                                        <th>Address</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminPickupTable">
+                                    <tr><td colspan="7" class="text-center text-muted">Loading...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- All Complaints -->
+                <div class="card mb-30">
+                    <div class="card-header">
+                        <h3><i class="fas fa-exclamation-circle"></i> All Complaints</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Ticket ID</th>
+                                        <th>Customer</th>
+                                        <th>Category</th>
+                                        <th>Subject</th>
+                                        <th>Priority</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminComplaintTable">
+                                    <tr><td colspan="7" class="text-center text-muted">Loading...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- All Payments -->
+                <div class="card mb-30">
+                    <div class="card-header">
+                        <h3><i class="fas fa-credit-card"></i> All Payments</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Reference</th>
+                                        <th>Customer</th>
+                                        <th>Amount</th>
+                                        <th>Method</th>
+                                        <th>Plan</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminPaymentTable">
+                                    <tr><td colspan="7" class="text-center text-muted">Loading...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Send Notification -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-bullhorn"></i> Send Broadcast Notification</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="broadcastForm" data-whatsapp="📢 ADMIN BROADCAST">
+                            <div class="form-group">
+                                <label>Notification Title</label>
+                                <input type="text" name="title" required placeholder="Enter notification title">
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea name="message" rows="4" required placeholder="Enter broadcast message..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Type</label>
+                                <select name="type" required>
+                                    <option value="info">Info</option>
+                                    <option value="success">Success</option>
+                                    <option value="warning">Warning</option>
+                                    <option value="error">Emergency</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane"></i> Send Broadcast
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <a href="https://wa.me/2347030151024" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pickups = JSON.parse(localStorage.getItem('pickups') || '[]');
+            const complaints = JSON.parse(localStorage.getItem('complaints') || '[]');
+            const payments = JSON.parse(localStorage.getItem('payments') || '[]');
+
+            // Update stats
+            document.getElementById('adminPickups').textContent = pickups.length;
+            document.getElementById('adminComplaints').textContent = complaints.filter(c => c.status === 'Open').length;
+            const totalRevenue = payments.reduce((sum, p) => sum + parseInt(p.amount || 0), 0);
+            document.getElementById('adminRevenue').textContent = '₦' + totalRevenue.toLocaleString();
+
+            // Populate pickups table
+            const pickupTable = document.getElementById('adminPickupTable');
+            if (pickups.length > 0) {
+                pickupTable.innerHTML = pickups.reverse().map(p => `
+                    <tr>
+                        <td><strong>${p.trackingId}</strong></td>
+                        <td>${p.fullName || 'N/A'}</td>
+                        <td>${p.wasteType || 'General'}</td>
+                        <td>${p.pickupDate || 'N/A'}</td>
+                        <td>${p.address || 'N/A'}</td>
+                        <td><span class="status status-pending">${p.status}</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-primary" onclick="updatePickupStatus('${p.trackingId}', 'Completed')">
+                                <i class="fas fa-check"></i> Complete
+                            </button>
+                        </td>
+                    </tr>
+                `).join('');
+            } else {
+                pickupTable.innerHTML = '<tr><td colspan="7" class="text-center text-muted">No pickups found</td></tr>';
+            }
+
+            // Populate complaints table
+            const complaintTable = document.getElementById('adminComplaintTable');
+            if (complaints.length > 0) {
+                complaintTable.innerHTML = complaints.reverse().map(c => `
+                    <tr>
+                        <td><strong>${c.ticketId}</strong></td>
+                        <td>${c.fullName || 'N/A'}</td>
+                        <td>${c.category || 'N/A'}</td>
+                        <td>${c.subject || 'N/A'}</td>
+                        <td><span class="status status-${c.priority === 'Urgent' ? 'cancelled' : c.priority === 'High' ? 'pending' : 'progress'}">${c.priority || 'Medium'}</span></td>
+                        <td><span class="status status-${c.status === 'Open' ? 'pending' : 'completed'}">${c.status}</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-primary" onclick="resolveComplaint('${c.ticketId}')">
+                                <i class="fas fa-check"></i> Resolve
+                            </button>
+                        </td>
+                    </tr>
+                `).join('');
+            } else {
+                complaintTable.innerHTML = '<tr><td colspan="7" class="text-center text-muted">No complaints found</td></tr>';
+            }
+
+            // Populate payments table
+            const paymentTable = document.getElementById('adminPaymentTable');
+            if (payments.length > 0) {
+                paymentTable.innerHTML = payments.reverse().map(p => `
+                    <tr>
+                        <td><strong>${p.referenceId}</strong></td>
+                        <td>${p.fullName || 'N/A'}</td>
+                        <td>₦${parseInt(p.amount || 0).toLocaleString()}</td>
+                        <td>${p.paymentMethod || 'N/A'}</td>
+                        <td>${p.servicePlan || 'N/A'}</td>
+                        <td><span class="status status-progress">${p.status}</span></td>
+                        <td>${new Date(p.createdAt).toLocaleDateString()}</td>
+                    </tr>
+                `).join('');
+            } else {
+                paymentTable.innerHTML = '<tr><td colspan="7" class="text-center text-muted">No payments found</td></tr>';
+            }
+        });
+
+        function updatePickupStatus(trackingId, newStatus) {
+            const pickups = JSON.parse(localStorage.getItem('pickups') || '[]');
+            const pickup = pickups.find(p => p.trackingId === trackingId);
+            if (pickup) {
+                pickup.status = newStatus;
+                localStorage.setItem('pickups', JSON.stringify(pickups));
+                showToast(`✅ Pickup ${trackingId} marked as ${newStatus}`, 'success');
+                
+                const message = `📋 *PICKUP STATUS UPDATE*\n🔖 ID: ${trackingId}\n📊 New Status: ${newStatus}\n👤 Customer: ${pickup.fullName || 'N/A'}\n📅 Updated: ${new Date().toLocaleString()}`;
+                setTimeout(() => sendToWhatsApp(message), 1500);
+                setTimeout(() => location.reload(), 2500);
+            }
+        }
+
+        function resolveComplaint(ticketId) {
+            const complaints = JSON.parse(localStorage.getItem('complaints') || '[]');
+            const complaint = complaints.find(c => c.ticketId === ticketId);
+            if (complaint) {
+                complaint.status = 'Resolved';
+                localStorage.setItem('complaints', JSON.stringify(complaints));
+                showToast(`✅ Complaint ${ticketId} resolved`, 'success');
+                
+                const message = `📋 *COMPLAINT RESOLVED*\n🎫 Ticket: ${ticketId}\n👤 Customer: ${complaint.fullName || 'N/A'}\n📂 Category: ${complaint.category || 'N/A'}\n📅 Resolved: ${new Date().toLocaleString()}`;
+                setTimeout(() => sendToWhatsApp(message), 1500);
+                setTimeout(() => location.reload(), 2500);
+            }
+        }
+
+        function generateReport() {
+            const pickups = JSON.parse(localStorage.getItem('pickups') || '[]');
+            const complaints = JSON.parse(localStorage.getItem('complaints') || '[]');
+            const payments = JSON.parse(localStorage.getItem('payments') || '[]');
+            const totalRevenue = payments.reduce((sum, p) => sum + parseInt(p.amount || 0), 0);
+
+            const report = `📊 *ECOWASTE PRO - ADMIN REPORT*
+📅 Generated: ${new Date().toLocaleString()}
+─────────────────
+📦 *PICKUPS SUMMARY*
+▫️ Total Pickups: ${pickups.length}
+▫️ Pending: ${pickups.filter(p => p.status === 'Pending').length}
+▫️ Completed: ${pickups.filter(p => p.status === 'Completed').length}
+─────────────────
+📝 *COMPLAINTS SUMMARY*
+▫️ Total Complaints: ${complaints.length}
+▫️ Open: ${complaints.filter(c => c.status === 'Open').length}
+▫️ Resolved: ${complaints.filter(c => c.status === 'Resolved').length}
+─────────────────
+💰 *REVENUE SUMMARY*
+▫️ Total Payments: ${payments.length}
+▫️ Total Revenue: ₦${totalRevenue.toLocaleString()}
+─────────────────
+✅ Report by EcoWaste Pro Admin`;
+
+            showToast('📊 Report generated! Sending via WhatsApp...', 'success');
+            setTimeout(() => sendToWhatsApp(report), 1500);
+        }
+
+        function sendBroadcast() {
+            const title = prompt('Enter broadcast title:');
+            if (!title) return;
+            const message = prompt('Enter broadcast message:');
+            if (!message) return;
+
+            addNotification(title, message, 'info');
+            showToast('📢 Broadcast sent!', 'success');
+
+            const whatsappMsg = `📢 *BROADCAST NOTIFICATION*\n📌 Title: ${title}\n💬 Message: ${message}\n📅 Sent: ${new Date().toLocaleString()}`;
+            setTimeout(() => sendToWhatsApp(whatsappMsg), 1500);
+        }
+
+        function viewAllPickups() {
+            window.location.href = 'track-pickup.html';
+        }
+
+        function viewAllComplaints() {
+            window.location.href = 'complaints.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints & Feedback - EcoWaste Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo"><i class="fas fa-recycle"></i><span>EcoWaste <strong>Pro</strong></span></div>
+                <button class="sidebar-close"><i class="fas fa-times"></i></button>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="menu-category">Main</div>
+                <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="schedule-pickup.html"><i class="fas fa-truck-pickup"></i> Schedule Pickup</a>
+                <a href="track-pickup.html"><i class="fas fa-map-marked-alt"></i> Track Pickup</a>
+                <div class="menu-category">Waste</div>
+                <a href="waste-categories.html"><i class="fas fa-tags"></i> Waste Categories</a>
+                <a href="recycling-center.html"><i class="fas fa-recycle"></i> Recycling Centers</a>
+                <a href="eco-rewards.html"><i class="fas fa-trophy"></i> Eco Rewards</a>
+                <div class="menu-category">Account</div>
+                <a href="payment.html"><i class="fas fa-credit-card"></i> Payments</a>
+                <a href="complaints.html" class="active"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+                <a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+                <a href="notifications.html"><i class="fas fa-bell"></i> Notifications</a>
+                <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                <div class="menu-category">Other</div>
+                <a href="../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="top-bar">
+                <div class="top-bar-left">
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                    <div class="search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Search..."></div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="notifications.html" class="notification-bell"><i class="fas fa-bell"></i><span class="badge">3</span></a>
+                    <div class="user-menu"><div class="user-avatar">JD</div></div>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1>📝 Complaints & Feedback</h1>
+                        <div class="breadcrumb">
+                            <a href="dashboard.html">Dashboard</a>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Complaints</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <!-- Complaint Form -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-edit"></i> Submit Complaint / Feedback</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="complaintForm">
+                                <div class="form-group">
+                                    <label><i class="fas fa-user"></i> Full Name</label>
+                                    <input type="text" name="fullName" required placeholder="Your name">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-phone"></i> Phone Number</label>
+                                    <input type="tel" name="phone" required placeholder="+234...">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-envelope"></i> Email</label>
+                                    <input type="email" name="email" required placeholder="your@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-folder"></i> Category</label>
+                                    <select name="category" required>
+                                        <option value="">Select Category</option>
+                                        <option value="Missed Pickup">Missed Pickup</option>
+                                        <option value="Late Pickup">Late Pickup</option>
+                                        <option value="Damaged Property">Damaged Property</option>
+                                        <option value="Rude Staff">Rude Staff</option>
+                                        <option value="Billing Issue">Billing Issue</option>
+                                        <option value="Service Quality">Service Quality</option>
+                                        <option value="Illegal Dumping Report">Illegal Dumping Report</option>
+                                        <option value="Suggestion">Suggestion</option>
+                                        <option value="Compliment">Compliment</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-heading"></i> Subject</label>
+                                    <input type="text" name="subject" required placeholder="Brief subject">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-map-marker-alt"></i> Location (if applicable)</label>
+                                    <input type="text" name="location" placeholder="Address or area">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-comment-dots"></i> Description</label>
+                                    <textarea name="description" rows="5" required placeholder="Please describe your complaint or feedback in detail..."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-star"></i> Priority Level</label>
+                                    <select name="priority" required>
+                                        <option value="Low">Low</option>
+                                        <option value="Medium" selected>Medium</option>
+                                        <option value="High">High</option>
+                                        <option value="Urgent">Urgent</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block btn-lg">
+                                    <i class="fas fa-paper-plane"></i> Submit Complaint
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- History -->
+                    <div>
+                        <div class="card mb-20">
+                            <div class="card-header">
+                                <h3><i class="fas fa-headset"></i> Need Immediate Help?</h3>
+                            </div>
+                            <div class="card-body text-center">
+                                <p class="text-muted mb-20">Chat with us on WhatsApp for faster resolution</p>
+                                <a href="https://wa.me/2347030151024?text=Hello! I need help with an issue." class="btn btn-primary btn-block" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                                </a>
+                                <p class="text-muted" style="margin-top: 10px; font-size: 0.85rem;">
+                                    📞 +234 703 015 1024 | Available 24/7
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-history"></i> Complaint History</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Ticket</th>
+                                                <th>Category</th>
+                                                <th>Subject</th>
+                                                <th>Status</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="complaintTableBody">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <a href="https://wa.me/2347030151024" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <script src="app.js"></script>
+</body>
+</html>

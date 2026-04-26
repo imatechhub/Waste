@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments - EcoWaste Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo"><i class="fas fa-recycle"></i><span>EcoWaste <strong>Pro</strong></span></div>
+                <button class="sidebar-close"><i class="fas fa-times"></i></button>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="menu-category">Main</div>
+                <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="schedule-pickup.html"><i class="fas fa-truck-pickup"></i> Schedule Pickup</a>
+                <a href="track-pickup.html"><i class="fas fa-map-marked-alt"></i> Track Pickup</a>
+                <div class="menu-category">Waste</div>
+                <a href="waste-categories.html"><i class="fas fa-tags"></i> Waste Categories</a>
+                <a href="recycling-center.html"><i class="fas fa-recycle"></i> Recycling Centers</a>
+                <a href="eco-rewards.html"><i class="fas fa-trophy"></i> Eco Rewards</a>
+                <div class="menu-category">Account</div>
+                <a href="payment.html" class="active"><i class="fas fa-credit-card"></i> Payments</a>
+                <a href="complaints.html"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+                <a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+                <a href="notifications.html"><i class="fas fa-bell"></i> Notifications</a>
+                <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                <div class="menu-category">Other</div>
+                <a href="../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="top-bar">
+                <div class="top-bar-left">
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                    <div class="search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Search..."></div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="notifications.html" class="notification-bell"><i class="fas fa-bell"></i><span class="badge">3</span></a>
+                    <div class="user-menu"><div class="user-avatar">JD</div></div>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1>💳 Payments</h1>
+                        <div class="breadcrumb">
+                            <a href="dashboard.html">Dashboard</a>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Payments</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <!-- Payment Form -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-money-bill-wave"></i> Make Payment</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="paymentForm">
+                                <div class="form-group">
+                                    <label><i class="fas fa-user"></i> Full Name</label>
+                                    <input type="text" name="fullName" required placeholder="Account holder name">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-phone"></i> Phone</label>
+                                    <input type="tel" name="phone" required placeholder="+234...">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-envelope"></i> Email</label>
+                                    <input type="email" name="email" required placeholder="your@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-box"></i> Service Plan</label>
+                                    <select name="servicePlan" required>
+                                        <option value="">Select Plan</option>
+                                        <option value="Basic - ₦2,500">Basic - ₦2,500/month</option>
+                                        <option value="Standard - ₦5,000">Standard - ₦5,000/month</option>
+                                        <option value="Premium - ₦10,000">Premium - ₦10,000/month</option>
+                                        <option value="One-time Pickup">One-time Pickup</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-naira-sign"></i> Amount (₦)</label>
+                                    <input type="number" name="amount" required placeholder="Enter amount" min="500">
+                                </div>
+
+                                <label style="display: block; margin-bottom: 10px; font-weight: 500;">
+                                    <i class="fas fa-credit-card" style="color: var(--primary);"></i> Payment Method
+                                </label>
+                                <div class="payment-methods">
+                                    <div class="payment-method selected" onclick="selectPayment(this, 'Bank Transfer')">
+                                        <input type="radio" name="paymentMethod" value="Bank Transfer" checked style="display:none;">
+                                        <i class="fas fa-university"></i>
+                                        <strong>Bank Transfer</strong>
+                                    </div>
+                                    <div class="payment-method" onclick="selectPayment(this, 'Card Payment')">
+                                        <input type="radio" name="paymentMethod" value="Card Payment" style="display:none;">
+                                        <i class="fas fa-credit-card"></i>
+                                        <strong>Card</strong>
+                                    </div>
+                                    <div class="payment-method" onclick="selectPayment(this, 'USSD')">
+                                        <input type="radio" name="paymentMethod" value="USSD" style="display:none;">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <strong>USSD</strong>
+                                    </div>
+                                    <div class="payment-method" onclick="selectPayment(this, 'Mobile Money')">
+                                        <input type="radio" name="paymentMethod" value="Mobile Money" style="display:none;">
+                                        <i class="fas fa-wallet"></i>
+                                        <strong>Mobile Money</strong>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label><i class="fas fa-comment"></i> Payment Note</label>
+                                    <textarea name="note" rows="2" placeholder="Optional note"></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-block btn-lg">
+                                    <i class="fas fa-lock"></i> Submit Payment
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Payment History -->
+                    <div>
+                        <div class="card mb-20">
+                            <div class="card-header">
+                                <h3><i class="fas fa-university"></i> Bank Details</h3>
+                            </div>
+                            <div class="card-body">
+                                <div style="background: var(--light); padding: 20px; border-radius: var(--radius-sm); margin-bottom: 15px;">
+                                    <p><strong>Bank:</strong> First Bank of Nigeria</p>
+                                    <p><strong>Account Name:</strong> EcoWaste Pro Limited</p>
+                                    <p><strong>Account Number:</strong> 3087654321</p>
+                                </div>
+                                <div style="background: var(--light); padding: 20px; border-radius: var(--radius-sm);">
+                                    <p><strong>Bank:</strong> GTBank</p>
+                                    <p><strong>Account Name:</strong> EcoWaste Pro Limited</p>
+                                    <p><strong>Account Number:</strong> 0123456789</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-history"></i> Payment History</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Reference</th>
+                                                <th>Amount</th>
+                                                <th>Method</th>
+                                                <th>Status</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="paymentTableBody">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <a href="https://wa.me/2347030151024" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    
+    <script src="app.js"></script>
+    <script>
+        function selectPayment(element, method) {
+            document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('selected'));
+            element.classList.add('selected');
+            element.querySelector('input[type="radio"]').checked = true;
+        }
+    </script>
+</body>
+</html>

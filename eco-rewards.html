@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Rewards - EcoWaste Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo"><i class="fas fa-recycle"></i><span>EcoWaste <strong>Pro</strong></span></div>
+                <button class="sidebar-close"><i class="fas fa-times"></i></button>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="menu-category">Main</div>
+                <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="schedule-pickup.html"><i class="fas fa-truck-pickup"></i> Schedule Pickup</a>
+                <a href="track-pickup.html"><i class="fas fa-map-marked-alt"></i> Track Pickup</a>
+                <div class="menu-category">Waste</div>
+                <a href="waste-categories.html"><i class="fas fa-tags"></i> Waste Categories</a>
+                <a href="recycling-center.html"><i class="fas fa-recycle"></i> Recycling Centers</a>
+                <a href="eco-rewards.html" class="active"><i class="fas fa-trophy"></i> Eco Rewards</a>
+                <div class="menu-category">Account</div>
+                <a href="payment.html"><i class="fas fa-credit-card"></i> Payments</a>
+                <a href="complaints.html"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+                <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                <div class="menu-category">Other</div>
+                <a href="../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="top-bar">
+                <div class="top-bar-left">
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                    <div class="search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Search..."></div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="notifications.html" class="notification-bell"><i class="fas fa-bell"></i><span class="badge">3</span></a>
+                    <div class="user-menu"><div class="user-avatar">JD</div></div>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1>🏆 Eco Rewards</h1>
+                        <div class="breadcrumb">
+                            <a href="dashboard.html">Dashboard</a>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Eco Rewards</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Points Summary -->
+                <div class="rewards-header">
+                    <div>
+                        <h2>Your Eco Points Balance</h2>
+                        <p>Earn points by recycling and proper waste disposal</p>
+                    </div>
+                    <div class="rewards-points">
+                        <div class="points"><span class="eco-points-value">1,250</span> 💎</div>
+                        <p>Total Points</p>
+                    </div>
+                </div>
+
+                <!-- How to Earn -->
+                <div class="card mb-30">
+                    <div class="card-header">
+                        <h3><i class="fas fa-coins"></i> How to Earn Points</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="grid-3">
+                            <div style="text-align: center; padding: 15px;">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">♻️</div>
+                                <strong>+50 pts</strong>
+                                <p class="text-muted" style="font-size: 0.85rem;">Per recycling drop-off</p>
+                            </div>
+                            <div style="text-align: center; padding: 15px;">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">🗑️</div>
+                                <strong>+25 pts</strong>
+                                <p class="text-muted" style="font-size: 0.85rem;">Per scheduled pickup</p>
+                            </div>
+                            <div style="text-align: center; padding: 15px;">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">🌍</div>
+                                <strong>+100 pts</strong>
+                                <p class="text-muted" style="font-size: 0.85rem;">Community cleanup event</p>
+                            </div>
+                            <div style="text-align: center; padding: 15px;">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">👥</div>
+                                <strong>+75 pts</strong>
+                                <p class="text-muted" style="font-size: 0.85rem;">Refer a friend</p>
+                            </div>
+                            <div style="text-align: center; padding: 15px;">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">📱</div>
+                                <strong>+10 pts</strong>
+                                <p class="text-muted" style="font-size: 0.85rem;">Daily app check-in</p>
+                            </div>
+                            <div style="text-align: center; padding: 15px;">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">⭐</div>
+                                <strong>+30 pts</strong>
+                                <p class="text-muted" style="font-size: 0.85rem;">Leave a review</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Available Rewards -->
+                <h3 style="margin-bottom: 20px;"><i class="fas fa-gift"></i> Available Rewards</h3>
+                <div class="rewards-grid">
+                    <div class="reward-card">
+                        <div class="reward-icon" style="background: rgba(0,184,148,0.1); color: var(--primary);">
+                            <i class="fas fa-percent"></i>
+                        </div>
+                        <h4>10% Discount</h4>
+                        <p class="points-required">500 Points</p>
+                        <p class="text-muted" style="font-size: 0.85rem;">Get 10% off your next pickup</p>
+                        <button class="btn btn-primary btn-sm btn-block mt-20" onclick="redeemReward('10% Discount Coupon', 500)">
+                            Redeem
+                        </button>
+                    </div>
+                    <div class="reward-card">
+                        <div class="reward-icon" style="background: rgba(108,92,231,0.1); color: var(--secondary);">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h4>Free Pickup</h4>
+                        <p class="points-required">1,000 Points</p>
+                        <p class="text-muted" style="font-size: 0.85rem;">One free waste collection</p>
+                        <button class="btn btn-primary btn-sm btn-block mt-20" onclick="redeemReward('Free Pickup', 1000)">
+                            Redeem
+                        </button>
+                    </div>
+                    <div class="reward-card">
+                        <div class="reward-icon" style="background: rgba(253,121,168,0.1); color: var(--accent);">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h4>Plant a Tree</h4>
+                        <p class="points-required">750 Points</p>
+                        <p class="text-muted" style="font-size: 0.85rem;">We plant a tree in your name</p>
+                        <button class="btn btn-primary btn-sm btn-block mt-20" onclick="redeemReward('Plant a Tree', 750)">
+                            Redeem
+                        </button>
+                    </div>
+                    <div class="reward-card">
+                        <div class="reward-icon" style="background: rgba(253,203,110,0.1); color: #f39c12;">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <h4>Eco Bag Set</h4>
+                        <p class="points-required">1,500 Points</p>
+                        <p class="text-muted" style="font-size: 0.85rem;">Set of 3 reusable shopping bags</p>
+                        <button class="btn btn-primary btn-sm btn-block mt-20" onclick="redeemReward('Eco Bag Set', 1500)">
+                            Redeem
+                        </button>
+                    </div>
+                    <div class="reward-card">
+                        <div class="reward-icon" style="background: rgba(9,132,227,0.1); color: var(--info);">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h4>Eco T-Shirt</h4>
+                        <p class="points-required">2,000 Points</p>
+                        <p class="text-muted" style="font-size: 0.85rem;">Branded eco-friendly t-shirt</p>
+                        <button class="btn btn-primary btn-sm btn-block mt-20" onclick="redeemReward('Eco T-Shirt', 2000)">
+                            Redeem
+                        </button>
+                    </div>
+                    <div class="reward-card">
+                        <div class="reward-icon" style="background: rgba(0,184,148,0.1); color: var(--primary);">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h4>Premium Upgrade</h4>
+                        <p class="points-required">5,000 Points</p>
+                        <p class="text-muted" style="font-size: 0.85rem;">1 month free Premium plan</p>
+                        <button class="btn btn-primary btn-sm btn-block mt-20" onclick="redeemReward('Premium Upgrade', 5000)">
+                            Redeem
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <a href="https://wa.me/2347030151024" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <script src="app.js"></script>
+</body>
+</html>

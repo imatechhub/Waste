@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoWaste Pro - Complete Waste Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <i class="fas fa-recycle fa-spin"></i>
+            <p>Loading EcoWaste Pro...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-recycle"></i>
+                <span>EcoWaste <strong>Pro</strong></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#stats">Impact</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="dashboard.html" class="btn btn-outline">Login</a>
+                <a href="#register-section" class="btn btn-primary">Register</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge"><i class="fas fa-leaf"></i> #1 Waste Management Platform</span>
+                <h1>Smart Waste Management for a <span class="gradient-text">Cleaner Future</span></h1>
+                <p>Revolutionary waste collection, recycling, and disposal services powered by technology. Join thousands making their communities cleaner and greener.</p>
+                <div class="hero-buttons">
+                    <a href="schedule-pickup.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-truck"></i> Schedule Pickup
+                    </a>
+                    <a href="#how-it-works" class="btn btn-outline btn-lg">
+                        <i class="fas fa-play-circle"></i> How It Works
+                    </a>
+                </div>
+                <div class="hero-stats-mini">
+                    <div class="stat-mini">
+                        <strong>50K+</strong>
+                        <span>Users</span>
+                    </div>
+                    <div class="stat-mini">
+                        <strong>200K+</strong>
+                        <span>Pickups</span>
+                    </div>
+                    <div class="stat-mini">
+                        <strong>500T+</strong>
+                        <span>Recycled</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-illustration">
+                    <div class="floating-card card-1">
+                        <i class="fas fa-recycle"></i>
+                        <span>Recycling Rate</span>
+                        <strong>87%</strong>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-truck"></i>
+                        <span>Today's Pickups</span>
+                        <strong>1,240</strong>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-leaf"></i>
+                        <span>CO₂ Saved</span>
+                        <strong>50T</strong>
+                    </div>
+                    <div class="earth-graphic">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120">
+                <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Our Services</span>
+                <h2>Complete Waste Management <span class="gradient-text">Solutions</span></h2>
+                <p>From collection to recycling, we handle every aspect of waste management</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon" style="background: linear-gradient(135deg, #00b894, #00cec9);">
+                        <i class="fas fa-truck-pickup"></i>
+                    </div>
+                    <h3>Scheduled Pickup</h3>
+                    <p>Book waste collection at your convenience. Choose date, time, and waste type for hassle-free disposal.</p>
+                    <a href="schedule-pickup.html" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon" style="background: linear-gradient(135deg, #6c5ce7, #a29bfe);">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Live Tracking</h3>
+                    <p>Track your waste collection truck in real-time. Get accurate ETAs and status updates.</p>
+                    <a href="track-pickup.html" class="service-link">Track Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon" style="background: linear-gradient(135deg, #fd79a8, #e84393);">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Recycling Centers</h3>
+                    <p>Find nearest recycling centers. Drop off recyclables and earn eco-points.</p>
+                    <a href="recycling-center.html" class="service-link">Find Centers <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon" style="background: linear-gradient(135deg, #fdcb6e, #f39c12);">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Waste Categories</h3>
+                    <p>Learn proper waste sorting. Our AI helps identify and categorize your waste correctly.</p>
+                    <a href="waste-categories.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon" style="background: linear-gradient(135deg, #55efc4, #00b894);">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Eco Rewards</h3>
+                    <p>Earn points for recycling and proper waste disposal. Redeem for exciting rewards.</p>
+                    <a href="eco-rewards.html" class="service-link">View Rewards <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon" style="background: linear-gradient(135deg, #74b9ff, #0984e3);">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <p>Join community clean-up events. Connect with eco-conscious neighbors.</p>
+                    <a href="community.html" class="service-link">Join Community <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Simple Process</span>
+                <h2>How It <span class="gradient-text">Works</span></h2>
+                <p>Get started in just 4 simple steps</p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><i class="fas fa-user-plus"></i></div>
+                    <h3>Register</h3>
+                    <p>Create your free account in less than 2 minutes</p>
+                </div>
+                <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3>Schedule</h3>
+                    <p>Book a pickup or find nearest recycling center</p>
+                </div>
+                <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><i class="fas fa-truck"></i></div>
+                    <h3>Collection</h3>
+                    <p>Our team arrives on schedule to collect your waste</p>
+                </div>
+                <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon"><i class="fas fa-gift"></i></div>
+                    <h3>Earn Rewards</h3>
+                    <p>Get eco-points and redeem for exciting rewards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Pricing Plans</span>
+                <h2>Affordable <span class="gradient-text">Plans</span> For Everyone</h2>
+                <p>Choose the plan that fits your waste management needs</p>
+            </div>
+            <div class="pricing-toggle">
+                <span>Monthly</span>
+                <label class="switch">
+                    <input type="checkbox" id="pricingToggle">
+                    <span class="slider"></span>
+                </label>
+                <span>Yearly <span class="save-badge">Save 20%</span></span>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Basic</h3>
+                        <div class="price">
+                            <span class="currency">₦</span>
+                            <span class="amount" data-monthly="2500" data-yearly="24000">2,500</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 2 Pickups per month</li>
+                        <li><i class="fas fa-check"></i> Household waste only</li>
+                        <li><i class="fas fa-check"></i> Email notifications</li>
+                        <li><i class="fas fa-check"></i> Basic reporting</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Priority pickup</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Recycling rewards</li>
+                    </ul>
+                    <a href="#register-section" class="btn btn-outline btn-block">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Standard</h3>
+                        <div class="price">
+                            <span class="currency">₦</span>
+                            <span class="amount" data-monthly="5000" data-yearly="48000">5,000</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 4 Pickups per month</li>
+                        <li><i class="fas fa-check"></i> All waste categories</li>
+                        <li><i class="fas fa-check"></i> SMS & Email alerts</li>
+                        <li><i class="fas fa-check"></i> Advanced reporting</li>
+                        <li><i class="fas fa-check"></i> Priority pickup</li>
+                        <li><i class="fas fa-check"></i> Recycling rewards</li>
+                    </ul>
+                    <a href="#register-section" class="btn btn-primary btn-block">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <div class="price">
+                            <span class="currency">₦</span>
+                            <span class="amount" data-monthly="10000" data-yearly="96000">10,000</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Unlimited Pickups</li>
+                        <li><i class="fas fa-check"></i> All waste + Hazardous</li>
+                        <li><i class="fas fa-check"></i> WhatsApp notifications</li>
+                        <li><i class="fas fa-check"></i> Full analytics dashboard</li>
+                        <li><i class="fas fa-check"></i> Same-day pickup</li>
+                        <li><i class="fas fa-check"></i> 2x Recycling rewards</li>
+                    </ul>
+                    <a href="#register-section" class="btn btn-outline btn-block">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-number" data-target="50000">0</div>
+                    <p>Active Users</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-truck"></i>
+                    <div class="stat-number" data-target="200000">0</div>
+                    <p>Pickups Completed</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-recycle"></i>
+                    <div class="stat-number" data-target="500">0</div>
+                    <p>Tons Recycled</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-city"></i>
+                    <div class="stat-number" data-target="25">0</div>
+                    <p>Cities Covered</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Testimonials</span>
+                <h2>What Our <span class="gradient-text">Users Say</span></h2>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card active">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"EcoWaste Pro transformed our neighborhood. The scheduled pickups are always on time, and the recycling rewards motivate everyone to sort their waste properly."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AO</div>
+                        <div>
+                            <strong>Adaeze Okonkwo</strong>
+                            <span>Lagos, Nigeria</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"The real-time tracking feature is amazing! I always know when the truck will arrive. Best waste management service I've ever used."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">BM</div>
+                        <div>
+                            <strong>Bayo Mohammed</strong>
+                            <span>Abuja, Nigeria</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"As a business owner, the commercial plan saves me so much hassle. The reporting features help me track our environmental impact."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CO</div>
+                        <div>
+                            <strong>Chioma Obi</strong>
+                            <span>Port Harcourt, Nigeria</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <span class="dot active" onclick="showTestimonial(0)"></span>
+                <span class="dot" onclick="showTestimonial(1)"></span>
+                <span class="dot" onclick="showTestimonial(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="register-section" id="register-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Join Us</span>
+                <h2>Create Your <span class="gradient-text">Account</span></h2>
+                <p>Start managing your waste responsibly today</p>
+            </div>
+            <div class="register-container">
+                <div class="register-info">
+                    <h3>Why Join EcoWaste Pro?</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Free account creation</li>
+                        <li><i class="fas fa-check-circle"></i> Flexible pickup scheduling</li>
+                        <li><i class="fas fa-check-circle"></i> Real-time tracking</li>
+                        <li><i class="fas fa-check-circle"></i> Earn recycling rewards</li>
+                        <li><i class="fas fa-check-circle"></i> Community events</li>
+                        <li><i class="fas fa-check-circle"></i> 24/7 Customer support</li>
+                    </ul>
+                    <div class="register-graphic">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                </div>
+                <form class="register-form" id="registerForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> First Name</label>
+                            <input type="text" name="firstName" required placeholder="Enter first name">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> Last Name</label>
+                            <input type="text" name="lastName" required placeholder="Enter last name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-envelope"></i> Email Address</label>
+                        <input type="email" name="email" required placeholder="Enter email address">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-phone"></i> Phone Number</label>
+                        <input type="tel" name="phone" required placeholder="e.g., +234 703 015 1024">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-map-marker-alt"></i> Address</label>
+                        <input type="text" name="address" required placeholder="Enter your full address">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-city"></i> City</label>
+                            <select name="city" required>
+                                <option value="">Select City</option>
+                                <option value="Lagos">Lagos</option>
+                                <option value="Abuja">Abuja</option>
+                                <option value="Port Harcourt">Port Harcourt</option>
+                                <option value="Kano">Kano</option>
+                                <option value="Ibadan">Ibadan</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-box"></i> Plan</label>
+                            <select name="plan" required>
+                                <option value="">Select Plan</option>
+                                <option value="Basic">Basic - ₦2,500/mo</option>
+                                <option value="Standard">Standard - ₦5,000/mo</option>
+                                <option value="Premium">Premium - ₦10,000/mo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-lock"></i> Password</label>
+                        <div class="password-input">
+                            <input type="password" name="password" required placeholder="Create a password" id="regPassword">
+                            <i class="fas fa-eye toggle-password" onclick="togglePassword('regPassword')"></i>
+                        </div>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" required>
+                            <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">
+                        <i class="fas fa-user-plus"></i> Create Account
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Get In Touch</span>
+                <h2>Contact <span class="gradient-text">Us</span></h2>
+                <p>Have questions? We'd love to hear from you</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info-cards">
+                    <div class="contact-info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Visit Us</h4>
+                        <p>123 Green Street, Victoria Island<br>Lagos, Nigeria</p>
+                    </div>
+                    <div class="contact-info-card">
+                        <i class="fas fa-phone"></i>
+                        <h4>Call Us</h4>
+                        <p>+234 703 015 1024<br>+234 800 ECO WASTE</p>
+                    </div>
+                    <div class="contact-info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email Us</h4>
+                        <p>info@ecowastepro.com<br>support@ecowastepro.com</p>
+                    </div>
+                    <div class="contact-info-card">
+                        <i class="fab fa-whatsapp"></i>
+                        <h4>WhatsApp</h4>
+                        <p>+234 703 015 1024<br>Available 24/7</p>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" required placeholder="Your Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" required placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="5" required placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-recycle"></i>
+                        <span>EcoWaste <strong>Pro</strong></span>
+                    </div>
+                    <p>Making waste management smart, efficient, and rewarding for everyone.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/2347030151024"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="schedule-pickup.html">Schedule Pickup</a></li>
+                        <li><a href="track-pickup.html">Track Pickup</a></li>
+                        <li><a href="recycling-center.html">Recycling Centers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="waste-categories.html">Waste Categories</a></li>
+                        <li><a href="eco-rewards.html">Eco Rewards</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="reports.html">Reports</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Get eco-tips and updates</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoWaste Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/2347030151024?text=Hello! I need help with waste management." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

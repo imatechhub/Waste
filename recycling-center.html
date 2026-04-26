@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling Centers - EcoWaste Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo"><i class="fas fa-recycle"></i><span>EcoWaste <strong>Pro</strong></span></div>
+                <button class="sidebar-close"><i class="fas fa-times"></i></button>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="menu-category">Main</div>
+                <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="schedule-pickup.html"><i class="fas fa-truck-pickup"></i> Schedule Pickup</a>
+                <a href="track-pickup.html"><i class="fas fa-map-marked-alt"></i> Track Pickup</a>
+                <div class="menu-category">Waste</div>
+                <a href="waste-categories.html"><i class="fas fa-tags"></i> Waste Categories</a>
+                <a href="recycling-center.html" class="active"><i class="fas fa-recycle"></i> Recycling Centers</a>
+                <a href="eco-rewards.html"><i class="fas fa-trophy"></i> Eco Rewards</a>
+                <div class="menu-category">Account</div>
+                <a href="payment.html"><i class="fas fa-credit-card"></i> Payments</a>
+                <a href="complaints.html"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+                <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                <div class="menu-category">Other</div>
+                <a href="../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="top-bar">
+                <div class="top-bar-left">
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                    <div class="search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Search centers..."></div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="notifications.html" class="notification-bell"><i class="fas fa-bell"></i><span class="badge">3</span></a>
+                    <div class="user-menu"><div class="user-avatar">JD</div></div>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1>♻️ Recycling Centers</h1>
+                        <div class="breadcrumb">
+                            <a href="dashboard.html">Dashboard</a>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Recycling Centers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="card mb-30">
+                    <div class="tracking-map" style="height: 300px;">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Interactive map showing recycling centers near you</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Centers Grid -->
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-body" style="text-align: center;">
+                            <div style="width: 70px; height: 70px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+                                <i class="fas fa-recycle" style="font-size: 1.8rem; color: white;"></i>
+                            </div>
+                            <h3>Lagos Green Hub</h3>
+                            <p class="text-muted" style="font-size: 0.9rem;">📍 Victoria Island, Lagos</p>
+                            <p class="text-muted" style="font-size: 0.85rem;">🕐 Mon-Sat: 7AM - 6PM</p>
+                            <p style="font-size: 0.85rem; color: var(--primary); margin: 10px 0;">📞 +234 801 234 5678</p>
+                            <div class="category-items" style="justify-content: center; margin-bottom: 15px;">
+                                <span>Plastic</span><span>Paper</span><span>Metal</span><span>Glass</span>
+                            </div>
+                            <a href="https://wa.me/2347030151024?text=I want to visit Lagos Green Hub recycling center" class="btn btn-primary btn-sm btn-block" target="_blank">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body" style="text-align: center;">
+                            <div style="width: 70px; height: 70px; background: var(--gradient-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+                                <i class="fas fa-recycle" style="font-size: 1.8rem; color: white;"></i>
+                            </div>
+                            <h3>Abuja Eco Station</h3>
+                            <p class="text-muted" style="font-size: 0.9rem;">📍 Wuse 2, Abuja</p>
+                            <p class="text-muted" style="font-size: 0.85rem;">🕐 Mon-Fri: 8AM - 5PM</p>
+                            <p style="font-size: 0.85rem; color: var(--primary); margin: 10px 0;">📞 +234 802 345 6789</p>
+                            <div class="category-items" style="justify-content: center; margin-bottom: 15px;">
+                                <span>E-waste</span><span>Batteries</span><span>Plastic</span>
+                            </div>
+                            <a href="https://wa.me/2347030151024?text=I want to visit Abuja Eco Station" class="btn btn-secondary btn-sm btn-block" target="_blank">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body" style="text-align: center;">
+                            <div style="width: 70px; height: 70px; background: var(--gradient-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+                                <i class="fas fa-recycle" style="font-size: 1.8rem; color: white;"></i>
+                            </div>
+                            <h3>PH Recycle Point</h3>
+                            <p class="text-muted" style="font-size: 0.9rem;">📍 GRA, Port Harcourt</p>
+                            <p class="text-muted" style="font-size: 0.85rem;">🕐 Mon-Sat: 8AM - 4PM</p>
+                            <p style="font-size: 0.85rem; color: var(--primary); margin: 10px 0;">📞 +234 803 456 7890</p>
+                            <div class="category-items" style="justify-content: center; margin-bottom: 15px;">
+                                <span>All Types</span><span>Hazardous</span><span>Medical</span>
+                            </div>
+                            <a href="https://wa.me/2347030151024?text=I want to visit PH Recycle Point" class="btn btn-outline btn-sm btn-block" target="_blank">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <a href="https://wa.me/2347030151024" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <script src="app.js"></script>
+</body>
+</html>

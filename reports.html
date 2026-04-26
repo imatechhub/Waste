@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - EcoWaste Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo"><i class="fas fa-recycle"></i><span>EcoWaste <strong>Pro</strong></span></div>
+                <button class="sidebar-close"><i class="fas fa-times"></i></button>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="menu-category">Main</div>
+                <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="schedule-pickup.html"><i class="fas fa-truck-pickup"></i> Schedule Pickup</a>
+                <a href="track-pickup.html"><i class="fas fa-map-marked-alt"></i> Track Pickup</a>
+                <div class="menu-category">Waste</div>
+                <a href="waste-categories.html"><i class="fas fa-tags"></i> Waste Categories</a>
+                <a href="recycling-center.html"><i class="fas fa-recycle"></i> Recycling Centers</a>
+                <a href="eco-rewards.html"><i class="fas fa-trophy"></i> Eco Rewards</a>
+                <div class="menu-category">Account</div>
+                <a href="payment.html"><i class="fas fa-credit-card"></i> Payments</a>
+                <a href="complaints.html"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+                <a href="reports.html" class="active"><i class="fas fa-chart-bar"></i> Reports</a>
+                <a href="notifications.html"><i class="fas fa-bell"></i> Notifications</a>
+                <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                <div class="menu-category">Other</div>
+                <a href="../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="top-bar">
+                <div class="top-bar-left">
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                    <div class="search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Search..."></div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="notifications.html" class="notification-bell"><i class="fas fa-bell"></i><span class="badge">3</span></a>
+                    <div class="user-menu"><div class="user-avatar">JD</div></div>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1>📊 Reports & Analytics</h1>
+                        <div class="breadcrumb">
+                            <a href="dashboard.html">Dashboard</a>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Reports</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="exportData()">
+                        <i class="fas fa-download"></i> Export Data
+                    </button>
+                </div>
+
+                <!-- Summary Cards -->
+                <div class="dashboard-stats mb-30">
+                    <div class="dash-stat-card">
+                        <div class="dash-stat-icon" style="background: var(--gradient-primary);"><i class="fas fa-truck"></i></div>
+                        <div class="dash-stat-info">
+                            <h3 id="reportPickups">0</h3>
+                            <p>Total Pickups</p>
+                        </div>
+                    </div>
+                    <div class="dash-stat-card">
+                        <div class="dash-stat-icon" style="background: var(--gradient-secondary);"><i class="fas fa-weight-hanging"></i></div>
+                        <div class="dash-stat-info">
+                            <h3>125 kg</h3>
+                            <p>Total Waste</p>
+                        </div>
+                    </div>
+                    <div class="dash-stat-card">
+                        <div class="dash-stat-icon" style="background: var(--gradient-accent);"><i class="fas fa-recycle"></i></div>
+                        <div class="dash-stat-info">
+                            <h3>87%</h3>
+                            <p>Recycling Rate</p>
+                        </div>
+                    </div>
+                    <div class="dash-stat-card">
+                        <div class="dash-stat-icon" style="background: linear-gradient(135deg, #fdcb6e, #f39c12);"><i class="fas fa-naira-sign"></i></div>
+                        <div class="dash-stat-info">
+                            <h3 id="reportPayments">₦0</h3>
+                            <p>Total Spent</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="grid-2 mb-30">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-chart-bar"></i> Monthly Collection</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-bar-container"></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-chart-pie"></i> Waste Breakdown</h3>
+                        </div>
+                        <div class="card-body">
+                            <div style="padding: 20px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--gray-light);">
+                                    <span>🏠 Household</span>
+                                    <div style="flex: 1; margin: 0 15px; height: 8px; background: var(--gray-light); border-radius: 4px;">
+                                        <div style="width: 45%; height: 100%; background: var(--primary); border-radius: 4px;"></div>
+                                    </div>
+                                    <strong>45%</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--gray-light);">
+                                    <span>♻️ Recyclables</span>
+                                    <div style="flex: 1; margin: 0 15px; height: 8px; background: var(--gray-light); border-radius: 4px;">
+                                        <div style="width: 30%; height: 100%; background: var(--secondary); border-radius: 4px;"></div>
+                                    </div>
+                                    <strong>30%</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--gray-light);">
+                                    <span>🥬 Organic</span>
+                                    <div style="flex: 1; margin: 0 15px; height: 8px; background: var(--gray-light); border-radius: 4px;">
+                                        <div style="width: 15%; height: 100%; background: var(--accent); border-radius: 4px;"></div>
+                                    </div>
+                                    <strong>15%</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
+                                    <span>💻 E-Waste</span>
+                                    <div style="flex: 1; margin: 0 15px; height: 8px; background: var(--gray-light); border-radius: 4px;">
+                                        <div style="width: 10%; height: 100%; background: var(--warning); border-radius: 4px;"></div>
+                                    </div>
+                                    <strong>10%</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Report Illegal Dumping -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Report Illegal Dumping</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="reportForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Your Name</label>
+                                    <input type="text" name="reporterName" required placeholder="Your name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" name="phone" required placeholder="+234...">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Location of Dumping</label>
+                                <input type="text" name="dumpLocation" required placeholder="Exact address or description">
+                            </div>
+                            <div class="form-group">
+                                <label>Type of Waste Dumped</label>
+                                <select name="wasteType" required>
+                                    <option value="">Select type</option>
+                                    <option value="Household waste">Household waste</option>
+                                    <option value="Construction debris">Construction debris</option>
+                                    <option value="Industrial waste">Industrial waste</option>
+                                    <option value="Hazardous materials">Hazardous materials</option>
+                                    <option value="Mixed waste">Mixed waste</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea name="description" rows="3" required placeholder="Describe what you observed..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-danger btn-lg">
+                                <i class="fas fa-exclamation-triangle"></i> Report Dumping
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <a href="https://wa.me/2347030151024" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pickups = JSON.parse(localStorage.getItem('pickups') || '[]');
+            const payments = JSON.parse(localStorage.getItem('payments') || '[]');
+            document.getElementById('reportPickups').textContent = pickups.length;
+            const totalPaid = payments.reduce((sum, p) => sum + parseInt(p.amount || 0), 0);
+            document.getElementById('reportPayments').textContent = '₦' + totalPaid.toLocaleString();
+        });
+    </script>
+</body>
+</html>

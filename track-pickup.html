@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Pickup - EcoWaste Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo"><i class="fas fa-recycle"></i><span>EcoWaste <strong>Pro</strong></span></div>
+                <button class="sidebar-close"><i class="fas fa-times"></i></button>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="menu-category">Main</div>
+                <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="schedule-pickup.html"><i class="fas fa-truck-pickup"></i> Schedule Pickup</a>
+                <a href="track-pickup.html" class="active"><i class="fas fa-map-marked-alt"></i> Track Pickup</a>
+                <div class="menu-category">Waste</div>
+                <a href="waste-categories.html"><i class="fas fa-tags"></i> Waste Categories</a>
+                <a href="recycling-center.html"><i class="fas fa-recycle"></i> Recycling Centers</a>
+                <a href="eco-rewards.html"><i class="fas fa-trophy"></i> Eco Rewards</a>
+                <div class="menu-category">Account</div>
+                <a href="payment.html"><i class="fas fa-credit-card"></i> Payments</a>
+                <a href="complaints.html"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+                <a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+                <a href="notifications.html"><i class="fas fa-bell"></i> Notifications</a>
+                <a href="community.html"><i class="fas fa-users"></i> Community</a>
+                <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                <div class="menu-category">Other</div>
+                <a href="../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="top-bar">
+                <div class="top-bar-left">
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                    <div class="search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Search..."></div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="notifications.html" class="notification-bell"><i class="fas fa-bell"></i><span class="badge">3</span></a>
+                    <div class="user-menu"><div class="user-avatar">JD</div></div>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1>📍 Track Your Pickup</h1>
+                        <div class="breadcrumb">
+                            <a href="dashboard.html">Dashboard</a>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Track Pickup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Tracking -->
+                <div class="card mb-30">
+                    <div class="card-body">
+                        <div style="display: flex; gap: 15px; align-items: end; flex-wrap: wrap;">
+                            <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                                <label>Enter Tracking ID</label>
+                                <input type="text" id="trackingInput" placeholder="e.g., EWP-XXXXX" style="width: 100%;">
+                            </div>
+                            <button class="btn btn-primary" onclick="searchTracking()">
+                                <i class="fas fa-search"></i> Track
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tracking Results -->
+                <div class="tracking-container card mb-30">
+                    <div class="tracking-map">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Live map tracking will appear here</p>
+                            <p style="font-size: 0.85rem; margin-top: 5px;">📍 Estimated arrival: 15 - 30 minutes</p>
+                        </div>
+                    </div>
+                    <div class="tracking-timeline">
+                        <h3 style="margin-bottom: 20px;">Tracking Timeline</h3>
+                        <div class="timeline-item completed">
+                            <div class="timeline-dot"><i class="fas fa-check"></i></div>
+                            <div class="timeline-content">
+                                <h4>Pickup Scheduled</h4>
+                                <p>Your pickup request has been confirmed</p>
+                                <span class="time">Today, 8:00 AM</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-dot"><i class="fas fa-check"></i></div>
+                            <div class="timeline-content">
+                                <h4>Driver Assigned</h4>
+                                <p>Driver Musa A. has been assigned to your pickup</p>
+                                <span class="time">Today, 8:15 AM</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item current">
+                            <div class="timeline-dot"><i class="fas fa-truck"></i></div>
+                            <div class="timeline-content">
+                                <h4>En Route</h4>
+                                <p>Driver is on the way to your location</p>
+                                <span class="time">Today, 8:45 AM</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"><i class="fas fa-box"></i></div>
+                            <div class="timeline-content">
+                                <h4>Waste Collected</h4>
+                                <p>Waiting for collection</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"><i class="fas fa-flag-checkered"></i></div>
+                            <div class="timeline-content">
+                                <h4>Delivered to Facility</h4>
+                                <p>Pending</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- All Pickups -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-list"></i> All Pickups</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Tracking ID</th>
+                                        <th>Waste Type</th>
+                                        <th>Date</th>
+                                        <th>Address</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="pickupTableBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <a href="https://wa.me/2347030151024" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="app.js"></script>
+    <script>
+        function searchTracking() {
+            const trackingId = document.getElementById('trackingInput').value.trim();
+            if (!trackingId) {
+                showToast('Please enter a tracking ID', 'error');
+                return;
+            }
+            const pickups = JSON.parse(localStorage.getItem('pickups') || '[]');
+            const found = pickups.find(p => p.trackingId === trackingId);
+            if (found) {
+                showToast(`Found: ${found.trackingId} - Status: ${found.status}`, 'success');
+            } else {
+                showToast('Tracking ID not found', 'error');
+            }
+        }
+    </script>
+</body>
+</html>
